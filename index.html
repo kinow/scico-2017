@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>An introduction to IIIF</title>
+
+    <meta name="description" content="An introduction to IIIF">
+    <meta name="author" content="Bruno P. Kinoshita">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/presentation.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+    <!--[if lt IE 9]> <script src="lib/js/html5shiv.js"></script> <![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="img/ZsMwlm2.jpg">
+          <br/>
+          <h3>An Introduction to the International Image Interoperability Framework (IIIF)</h3>
+          <br/>
+          <p>Bruno P. Kinoshita</p>
+          <p style="font-size: 60%">August, 2017<br/>
+             Wellington, New Zealand</p>
+        </section>
+				<section data-background-image="img/ZsMwlm2.jpg">
+          <h3>Who am I?</h3>
+          <h6 style='text-align: left; font-size: 80%;'>Bruno P. Kinoshita <br/><span style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @kinow</span></h6>
+          <ul style='font-size: 70%;'>
+            <li>Software Engineer, NIWA, New Zealand</li>
+            <li>PMC / Committer of Apache Jena, Apache OpenNLP, Apache Commons</li>
+            <li>Java, Groovy, Python, PHP, Shell, JavaScript, Linux, drawing :-)</li>
+            <li>Software engineering, bioinformatics practices, fuzzy logic, text processing, GIS, semantic web, NLP, SciArt</li>
+          </ul>
+          <br/>
+        </section>
+        <section data-background-image="img/ZsMwlm2.jpg">
+          <h3>Agenda</h3>
+          <ul>
+            <li>What is IIIF ?</li>
+            <li>Who is using it ?</li>
+            <li>Standards in the framework</li>
+            <li>Existing implementations</li>
+            <li>Demo</li>
+          </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-blueish.jpg">
+          <h3>What is IIIF ?</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-blueish.jpg">
+          <ul>
+            <li>Group of standards for sharing and reusing images</li>
+            <li>Can serve high resolution images</li>
+            <li>Metadata enriched images</li>
+            <li>Annotations</li>
+            <li>Searching</li>
+            <li>Proposed in 2011, published in 2012, by</li>
+            <ul>
+              <li style="font-size: 60%">British Library, Stanford University, Bodleian Libraries from Oxford, the Biblioth&egrave;que nationale de France, Nasjonalbiblioteket Norway, Los Alamos National Laboratory Research Library, and Cornell University</li>
+            </ul>
+            <li>One participant institution in New Zealand</li>
+            <li>http://iiif.io &mdash; <i class="fa fa-twitter" aria-hidden="true"></i> @iiif_io &mdash; https://github.com/iiif</li>
+          </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Who is using it ?</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Can you guess ?</h3>
+          <span class="fragment fade-in">
+            <h3>Yup</h3>
+          </span>
+          <span class="fragment fade-in">
+            <h3>Libraries</h3>
+          </span>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>But also...</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Over 65 public participants</h3>
+          <ul>
+            <li><strong>Universities</strong></li>
+            <ul style="font-size: 70%"><li>(Ohio, St. Louis, Stanford, Dublin, Edinburgh, Tokyo, Toronto, Yale, ...)</li></ul>
+            <li><strong>Museums</strong></li>
+            <ul style="font-size: 70%"><li>(Vatican, British, Carnegie, Cooper Hewitt, Harvard Art, ...)</li></ul>
+            <li><strong>Companies, institutes, foundations</strong></li>
+            <ul style="font-size: 70%"><li>(Zegami, text&amp;bytes, TextGrid, synapctica solutions, Sirma Group, digirati, ITHAKA, Wellcome Foundation, Max Planck Institutes, Luna imaging, Klokan Technologies, Internet Archive, Europeana, Getty, 4Science, ...)</li></ul>
+            <li><strong>Libraries</strong> too!</li>
+            <ul style="font-size: 70%"><li>(DPLA, biblissima, France, Sweden, NZ, British, Kyoto, Leiden, Library of Congress, Israel, Poland, Scotland, Wales, Virginia, World Digital Library, ...)</li></ul>
+          </ul>
+        </section>
+        <section data-background-image="img/ZsMwlm2-redish.jpg">
+          <h3>Map goes here...</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+          <h3>Standards in the framework</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-greenish.jpg">
+          <h3>Existing implementations</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+          <h3>Demo</h3>
+        </section>
+        <section data-background-image="img/ZsMwlm2.jpg">
+          <h2>Questions ???</h2>
+        </section>
+        <section data-background-image="img/ZsMwlm2.jpg">
+          <h3>Acknowledgements</h3>
+          <ul>
+            <li>Ioannis Moutsatsos</li>
+            <li>NIWA</li>
+            <li>NeSI</li>
+            <li>SciCo 2017 organizers, sponsors, participants</li>
+          </ul>
+        </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        keyboard: true,
+        touch: true,
+        loop: false,
+        fragments: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
