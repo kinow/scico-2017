@@ -109,6 +109,16 @@ body {
   text-shadow: 2px 2px 2px #222;
   word-wrap: break-word; }
 
+.reveal h1 span,
+.reveal h2 span,
+.reveal h3 span,
+.reveal h4 span,
+.reveal h5 span,
+.reveal h6 span {
+  color: #fff;
+  background-color: #a23;
+  text-shadow: none; }
+
 .reveal h1 {
   font-size: 3.77em; }
 
