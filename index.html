@@ -1,347 +1,347 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>An introduction to IIIF</title>
+  <title>An introduction to IIIF</title>
 
-    <meta name="description" content="An introduction to IIIF">
-    <meta name="author" content="Bruno P. Kinoshita">
+  <meta name="description" content="An introduction to IIIF">
+  <meta name="author" content="Bruno P. Kinoshita">
 
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/reveal.css">
-        <link rel="stylesheet" href="css/theme/presentation.css">
+  <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/presentation.css">
 
-        <!-- Theme used for syntax highlighting of code -->
-        <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-        <!-- Printing and PDF exports -->
-        <script>
-            var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-        </script>
-    <!--[if lt IE 9]> <script src="lib/js/html5shiv.js"></script> <![endif]-->
-    </head>
-    <body>
-        <div class="reveal">
-            <div class="slides">
-                <section data-background-image="img/ZsMwlm2.jpg">
-          <h3><span>An Introduction to the International Image Interoperability Framework (IIIF)</span></h3>
-          <p>Bruno P. Kinoshita<br/><small><a href="https://kinoshita.eti.br">https://kinoshita.eti.br</a> &mdash; <a href="https://github.com/kinow/">https://github.com/kinow</a></small></p>
-          <p style="font-size: 60%"><a href="http://nesi-cri.nz/">2017 Science Coding Conference</a><br/>
-             Wellington, New Zealand 1-2 August 2017</p>
-        </section>
-                <section data-background-image="img/ZsMwlm2.jpg">
-          <h3>Who am I?</h3>
-          <h6 style='text-align: left; font-size: 80%;'>Bruno P. Kinoshita <br/><font style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @kinow</font></h6>
-          <ul style='font-size: 70%;'>
-            <li>Software Engineer, NIWA, New Zealand</li>
-            <li>PMC / Committer of Apache Jena, Apache OpenNLP, Apache Commons</li>
-            <li>Java, Groovy, Python, PHP, Shell, JavaScript, Linux, drawing :-)</li>
-            <li>Software engineering, bioinformatics, fuzzy logic, text processing, GIS, semantic web, NLP, SciArt</li>
-          </ul>
-          <br/>
-        </section>
-        <section data-background-image="img/ZsMwlm2.jpg">
-          <h3>Agenda</h3>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]> <script src="lib/js/html5shiv.js"></script> <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-background-image="img/ZsMwlm2.jpg">
+        <h3><span>An Introduction to the International Image Interoperability Framework (IIIF)</span></h3>
+        <p>Bruno P. Kinoshita<br/><small><a href="https://kinoshita.eti.br">https://kinoshita.eti.br</a> &mdash; <a href="https://github.com/kinow/">https://github.com/kinow</a></small></p>
+        <p style="font-size: 60%"><a href="http://nesi-cri.nz/">2017 Science Coding Conference</a><br/>
+         Wellington, New Zealand 1-2 August 2017</p>
+       </section>
+       <section data-background-image="img/ZsMwlm2.jpg">
+        <h3>Who am I?</h3>
+        <h6 style='text-align: left; font-size: 80%;'>Bruno P. Kinoshita <br/><font style="font-size: 60%"><i class="fa fa-twitter" aria-hidden="true"></i> @kinow</font></h6>
+        <ul style='font-size: 70%;'>
+          <li>Software Engineer, NIWA, New Zealand</li>
+          <li>PMC / Committer of Apache Jena, Apache OpenNLP, Apache Commons</li>
+          <li>Java, Groovy, Python, PHP, Shell, JavaScript, Linux, drawing :-)</li>
+          <li>Software engineering, bioinformatics, fuzzy logic, text processing, GIS, semantic web, NLP, SciArt</li>
+        </ul>
+        <br/>
+      </section>
+      <section data-background-image="img/ZsMwlm2.jpg">
+        <h3>Agenda</h3>
+        <ul>
+          <li>What is IIIF ?</li>
+          <li>Who is using it ?</li>
+          <li>Standards in the framework</li>
+          <li>Existing implementations</li>
+          <li>Demo</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-blueish.jpg">
+        <h3>What is IIIF ?</h3>
+        <span class="fragment fade-in">
+          <h3>Or Triple-Eye-Eff</h3>
+        </span>
+      </section>
+      <section data-background-image="img/ZsMwlm2-blueish.jpg">
+        <ul>
+          <li>Group of standards for sharing and reusing images</li>
+          <li>Can serve high resolution images</li>
+          <li>Metadata enriched images</li>
+          <li>Annotations</li>
+          <li>Searching</li>
+          <li>Proposed in 2011, published in 2012, by</li>
           <ul>
-            <li>What is IIIF ?</li>
-            <li>Who is using it ?</li>
-            <li>Standards in the framework</li>
-            <li>Existing implementations</li>
-            <li>Demo</li>
+            <li style="font-size: 60%">British Library, Stanford University, Bodleian Libraries from Oxford, the Biblioth&egrave;que nationale de France, Nasjonalbiblioteket Norway, Los Alamos National Laboratory Research Library, and Cornell University</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-blueish.jpg">
-          <h3>What is IIIF ?</h3>
-          <span class="fragment fade-in">
-            <h3>Or Triple-Eye-Eff</h3>
-          </span>
-        </section>
-        <section data-background-image="img/ZsMwlm2-blueish.jpg">
+          <li>One participant institution in New Zealand</li>
+          <li>http://iiif.io &mdash; <i class="fa fa-twitter" aria-hidden="true"></i> @iiif_io &mdash; https://github.com/iiif</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-blueish.jpg">
+        <h3>Some benefits of using IIIF</h3>
+        <ul>
+          <li>Rich zoom, manipulation of size scale, region of interest, rotation, quality, format</li>
+          <li>Cite, annotate, share with RESTful API's, JSON-LD</li>
+          <li>Authentication through SSO systems</li>
+          <li>Avoid vendor lock-in, reduce of long term costs</li>
+          <li>Combine content from across repositories</li>
+          <li>Global community</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-redish.jpg">
+        <h3>Who is using it ?</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-redish.jpg">
+        <h3>Can you guess ?</h3>
+        <span class="fragment fade-in">
+          <h3>Yup</h3>
+        </span>
+        <span class="fragment fade-in">
+          <h3>Libraries</h3>
+        </span>
+      </section>
+      <section data-background-image="img/ZsMwlm2-redish.jpg">
+        <h3>But also...</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-redish.jpg">
+        <h3>Over 65 public participants</h3>
+        <ul>
+          <li><strong>Universities</strong></li>
+          <ul style="font-size: 70%"><li>(Ohio, St. Louis, Stanford, Dublin, Edinburgh, Tokyo, Toronto, Yale, ...)</li></ul>
+          <li><strong>Museums</strong></li>
+          <ul style="font-size: 70%"><li>(Vatican, British, Carnegie, Cooper Hewitt, Harvard Art, ...)</li></ul>
+          <li><strong>Companies, institutes, foundations</strong></li>
+          <ul style="font-size: 70%"><li>(Zegami, text&amp;bytes, TextGrid, synapctica solutions, Sirma Group, digirati, ITHAKA, Wellcome Foundation, Max Planck Institutes, Luna imaging, Klokan Technologies, Internet Archive, Europeana, Getty, 4Science, ...)</li></ul>
+          <li><strong>Libraries</strong> too!</li>
+          <ul style="font-size: 70%"><li>(DPLA, biblissima, France, Sweden, NZ, British, Kyoto, Leiden, Library of Congress, Israel, Poland, Scotland, Wales, Virginia, World Digital Library, ...)</li></ul>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-redish.jpg">
+        <h3>Map goes here...</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Standards in the framework</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Image API</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Image API</h3>
+        <ul>
+          <li>Provides an image delivery API</li>
+          <li>V 1.0 Aug/2012, V2.0 Sep/2014, current version 2.1.1 Jun/2017</li>
+          <li>Specifies a web service to serve images through HTTP or HTTPS</li>
+          <li>URI specifies region, size, rotation, quality, format</li>
+          <li>Can provide technical information about the image for clients</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Example</h3>
+        <ul style="margin: 0; padding: 0">
+          <li>URI Syntax</li>
           <ul>
-            <li>Group of standards for sharing and reusing images</li>
-            <li>Can serve high resolution images</li>
-            <li>Metadata enriched images</li>
-            <li>Annotations</li>
-            <li>Searching</li>
-            <li>Proposed in 2011, published in 2012, by</li>
-            <ul>
-              <li style="font-size: 60%">British Library, Stanford University, Bodleian Libraries from Oxford, the Biblioth&egrave;que nationale de France, Nasjonalbiblioteket Norway, Los Alamos National Laboratory Research Library, and Cornell University</li>
-            </ul>
-            <li>One participant institution in New Zealand</li>
-            <li>http://iiif.io &mdash; <i class="fa fa-twitter" aria-hidden="true"></i> @iiif_io &mdash; https://github.com/iiif</li>
+            <li style="font-size: 60%; list-style: none;">{scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-blueish.jpg">
-          <h3>Some benefits of using IIIF</h3>
+          <li>Original</li>
           <ul>
-            <li>Rich zoom, manipulation of size scale, region of interest, rotation, quality, format</li>
-            <li>Cite, annotate, share with RESTful API's, JSON-LD</li>
-            <li>Authentication through SSO systems</li>
-            <li>Avoid vendor lock-in, reduce of long term costs</li>
-            <li>Combine content from across repositories</li>
-            <li>Global community</li>
+            <li style="font-size: 60%; list-style: none;">https://PRINCETON/loris/pudl0001....jp2/full/655,/0/default.jpg</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Who is using it ?</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Can you guess ?</h3>
-          <span class="fragment fade-in">
-            <h3>Yup</h3>
-          </span>
-          <span class="fragment fade-in">
-            <h3>Libraries</h3>
-          </span>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>But also...</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Over 65 public participants</h3>
+          <li>Rotated 33 degrees clockwise, smaller region, and converted to PNG:</li>
           <ul>
-            <li><strong>Universities</strong></li>
-            <ul style="font-size: 70%"><li>(Ohio, St. Louis, Stanford, Dublin, Edinburgh, Tokyo, Toronto, Yale, ...)</li></ul>
-            <li><strong>Museums</strong></li>
-            <ul style="font-size: 70%"><li>(Vatican, British, Carnegie, Cooper Hewitt, Harvard Art, ...)</li></ul>
-            <li><strong>Companies, institutes, foundations</strong></li>
-            <ul style="font-size: 70%"><li>(Zegami, text&amp;bytes, TextGrid, synapctica solutions, Sirma Group, digirati, ITHAKA, Wellcome Foundation, Max Planck Institutes, Luna imaging, Klokan Technologies, Internet Archive, Europeana, Getty, 4Science, ...)</li></ul>
-            <li><strong>Libraries</strong> too!</li>
-            <ul style="font-size: 70%"><li>(DPLA, biblissima, France, Sweden, NZ, British, Kyoto, Leiden, Library of Congress, Israel, Poland, Scotland, Wales, Virginia, World Digital Library, ...)</li></ul>
+            <li style="font-size: 60%; list-style: none;">https://PRINCETON/loris/pudl0001....jp2/<span style='color: red'>0,100,1000,1000</span>/655,/<span style='color: red'>33</span>/default.<span style='color: red'>png</span></li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-redish.jpg">
-          <h3>Map goes here...</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Standards in the framework</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Image API</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Image API</h3>
+          <li style='list-style: none; text-align: center;'>
+            <img src="img/imageapi-original.jpg"> <img src="img/imageapi-rotated.png">
+          </li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Image Information request</h3>
+        <ul>
+          <li style='list-style: none;'>{scheme}://{server}{/prefix}/{identifier}/info.json</li>
+          <li style='list-style: none;'>https://PRINCETON/loris/pudl0001....jp2/info.json</li>
+          <li style='list-style: none;'><img src='img/imageapi-info.png' height='500px'></li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Presentation API</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Presentation API</h3>
+        <ul>
+          <li>Provides information for clients to present image data to human users</li>
+          <li>V 1.0 Aug/2013, V2.0 Sep/2014, current version 2.1.1 Jun/2017</li>
+          <li>Allows to present an image, a painting, two sides of a photography, pages of a book, ...</li>
+          <li>Adopts principles of Linked Data and Architecture of the Web, as well as Shared Canvas data model and JSON-LD</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Example</h3>
+        <ul style="margin: 0; padding: 0">
+          <li>Recommended URI Syntax</li>
           <ul>
-            <li>Provides an image delivery API</li>
-            <li>V 1.0 Aug/2012, V2.0 Sep/2014, current version 2.1.1 Jun/2017</li>
-            <li>Specifies a web service to serve images through HTTP or HTTPS</li>
-            <li>URI specifies region, size, rotation, quality, format</li>
-            <li>Can provide technical information about the image for clients</li>
+            <li style="font-size: 60%; list-style: none;">{scheme}://{host}/{prefix}/{identifier}/manifest</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Example</h3>
-          <ul style="margin: 0; padding: 0">
-            <li>URI Syntax</li>
-            <ul>
-              <li style="font-size: 60%; list-style: none;">{scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}</li>
-            </ul>
-            <li>Original</li>
-            <ul>
-              <li style="font-size: 60%; list-style: none;">https://PRINCETON/loris/pudl0001....jp2/full/655,/0/default.jpg</li>
-            </ul>
-            <li>Rotated 33 degrees clockwise, smaller region, and converted to PNG:</li>
-            <ul>
-              <li style="font-size: 60%; list-style: none;">https://PRINCETON/loris/pudl0001....jp2/<span style='color: red'>0,100,1000,1000</span>/655,/<span style='color: red'>33</span>/default.<span style='color: red'>png</span></li>
-            </ul>
-            <li style='list-style: none; text-align: center;'>
-              <img src="img/imageapi-original.jpg"> <img src="img/imageapi-rotated.png">
-            </li>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Image Information request</h3>
+          <li>Example from Biblissima</li>
           <ul>
-            <li style='list-style: none;'>{scheme}://{server}{/prefix}/{identifier}/info.json</li>
-            <li style='list-style: none;'>https://PRINCETON/loris/pudl0001....jp2/info.json</li>
-            <li style='list-style: none;'><img src='img/imageapi-info.png' height='500px'></li>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Presentation API</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Presentation API</h3>
-          <ul>
-            <li>Provides information for clients to present image data to human users</li>
-            <li>V 1.0 Aug/2013, V2.0 Sep/2014, current version 2.1.1 Jun/2017</li>
-            <li>Allows to present an image, a painting, two sides of a photography, pages of a book, ...</li>
-            <li>Adopts principles of Linked Data and Architecture of the Web, as well as Shared Canvas data model and JSON-LD</li>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Example</h3>
-          <ul style="margin: 0; padding: 0">
-            <li>Recommended URI Syntax</li>
-            <ul>
-              <li style="font-size: 60%; list-style: none;">{scheme}://{host}/{prefix}/{identifier}/manifest</li>
-            </ul>
-            <li>Example from Biblissima</li>
-            <ul>
-              <li style="font-size: 60%; list-style: none;">http://BIBLISSIMA/manifests/ark:/12148/btv...485j/manifest.json</li>
+            <li style="font-size: 60%; list-style: none;">http://BIBLISSIMA/manifests/ark:/12148/btv...485j/manifest.json</li>
             <li style='list-style: none;'><img src='img/presentationapi-manifest.png' height='410px'></li>
-            </ul>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Content Search API</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Content Search API</h3>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Content Search API</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Content Search API</h3>
+        <ul>
+          <li>Complements Image and Presentation API's</li>
+          <li>V 1.0 Jun/2016 (with revisions)</li>
+          <li>Allows working with dimensions, image information, and GIS</li>
+          <li>Possible to use a DB, files, SPARQL Endpoint, search server, etc, as long as you can produce JSON-LD</li>
+          <li>Example use cases: searching OCR text, transcribed context, translations, commentaries, metadata, etc</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Authentication API</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Authentication API</h3>
+        <ul>
+          <li>Describes workflows to interact with arbitrary third party protocols</li>
+          <li>V 1.0 (current) Jan/2017</li>
+          <li>Talks about HTTPS, SSL, access tokens, cookies, headers, </li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Authentication API</h3>
+        <img src="img/auth-flow-client.png" width="80%">
+        <p><small><i>http://iiif.io/api/auth/1.0/#access-token-service</i></small></p>
+      </section>
+      <section data-background-image="img/ZsMwlm2-purpleish.jpg">
+        <h3>Audio/Visual (WIP)</h3>
+        <ul>
+          <li>Its objetive is to go beyond images, and support audio and videos</li>
+          <li>Still work-in-progress</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-greenish.jpg">
+        <h3>Existing implementations</h3>
+      </section>
+      <section data-background-image="img/ZsMwlm2-greenish.jpg">
+        <h3>Existing implementations</h3>
+        <ul style='font-size: 80%'>
+          <li>Image servers</li>
           <ul>
-            <li>Complements Image and Presentation API's</li>
-            <li>V 1.0 Jun/2016 (with revisions)</li>
-            <li>Allows working with dimensions, image information, and GIS</li>
-            <li>Possible to use a DB, files, SPARQL Endpoint, search server, etc, as long as you can produce JSON-LD</li>
-            <li>Example use cases: searching OCR text, transcribed context, translations, commentaries, metadata, etc</li>
+            <li>Cantaloupe (Java, U. of Illinois/NCSA OS License)</li>
+            <li>Loris (Python, BSD-2)</li>
+            <li>IIPImage (C++, GPL)</li>
+            <li>go-iiif (Go, BSD-3)</li>
+            <li>...</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Authentication API</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Authentication API</h3>
+          <li>Image viewers</li>
           <ul>
-            <li>Describes workflows to interact with arbitrary third party protocols</li>
-            <li>V 1.0 (current) Jan/2017</li>
-            <li>Talks about HTTPS, SSL, access tokens, cookies, headers, </li>
+            <li>OpenSeaDragon (JS, BSD-3)</li>
+            <li>Mirador (JS, AL)</li>
+            <li>Leaflet-IIIF (JS, MIT)</li>
+            <li>IIIFViewer (JS, BSD-2)</li>
+            <li>...</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Authentication API</h3>
-          <img src="img/auth-flow-client.png" width="80%">
-          <p><small><i>http://iiif.io/api/auth/1.0/#access-token-service</i></small></p>
-        </section>
-        <section data-background-image="img/ZsMwlm2-purpleish.jpg">
-          <h3>Audio/Visual (WIP)</h3>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-greenish.jpg">
+        <h3>Existing implementations</h3>
+        <ul>
+          <li>Annotation servers</li>
           <ul>
-            <li>Its objetive is to go beyond images, and support audio and videos</li>
-            <li>Still work-in-progress</li>
+            <li>SimpleAnnotationServer (Java, AL)</li>
+            <li>...</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-greenish.jpg">
-          <h3>Existing implementations</h3>
-        </section>
-        <section data-background-image="img/ZsMwlm2-greenish.jpg">
-          <h3>Existing implementations</h3>
-          <ul style='font-size: 80%'>
-            <li>Image servers</li>
-            <ul>
-              <li>Cantaloupe (Java, U. of Illinois/NCSA OS License)</li>
-              <li>Loris (Python, BSD-2)</li>
-              <li>IIPImage (C++, GPL)</li>
-              <li>go-iiif (Go, BSD-3)</li>
-              <li>...</li>
-            </ul>
-            <li>Image viewers</li>
-            <ul>
-              <li>OpenSeaDragon (JS, BSD-3)</li>
-              <li>Mirador (JS, AL)</li>
-              <li>Leaflet-IIIF (JS, MIT)</li>
-              <li>IIIFViewer (JS, BSD-2)</li>
-              <li>...</li>
-            </ul>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-greenish.jpg">
-          <h3>Existing implementations</h3>
+          <li>Annotation stores</li>
           <ul>
-            <li>Annotation servers</li>
-            <ul>
-              <li>SimpleAnnotationServer (Java, AL)</li>
-              <li>...</li>
-            </ul>
-            <li>Annotation stores</li>
-            <ul>
-              <li>Apache Jena (Java, AL)</li>
-              <li>Eclipse RDF4J/Sesame (Java, EDL)</li>
-              <li>Stanford Triannon (Ruby, AL)</li>
-              <li>Harvard Catcha (Groovy, <a href="https://github.com/annotationsatharvard/catcha/issues/38">AL?</a>)</li>
-              <li>...</li>
-            </ul>
+            <li>Apache Jena (Java, AL)</li>
+            <li>Eclipse RDF4J/Sesame (Java, EDL)</li>
+            <li>Stanford Triannon (Ruby, AL)</li>
+            <li>Harvard Catcha (Groovy, <a href="https://github.com/annotationsatharvard/catcha/issues/38">AL?</a>)</li>
+            <li>...</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-greenish.jpg">
-          <h3>Existing implementations</h3>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-greenish.jpg">
+        <h3>Existing implementations</h3>
+        <ul>
+          <li>And much, much <a href="https://github.com/IIIF/awesome-iiif">more</a></li>
           <ul>
-            <li>And much, much <a href="https://github.com/IIIF/awesome-iiif">more</a></li>
-            <ul>
-              <li>Image server shims</li>
-              <li>Image API libraries</li>
-              <li>Image tools</li>
-              <li>Presentation API libraries</li>
-              <li>Presentation API shims</li>
-              <li>Presentation manifest tools</li>
-              <li>Content search API's</li>
-              <li>Validators</li>
-              <li>...</li>
-            </ul>
+            <li>Image server shims</li>
+            <li>Image API libraries</li>
+            <li>Image tools</li>
+            <li>Presentation API libraries</li>
+            <li>Presentation API shims</li>
+            <li>Presentation manifest tools</li>
+            <li>Content search API's</li>
+            <li>Validators</li>
+            <li>...</li>
           </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2.jpg">
-          <h3>Acknowledgements</h3>
-          <ul>
-            <li>Ioannis Moutsatsos (@ioannismou)</li>
-            <li>NIWA (@niwa_nz)</li>
-            <li>NeSI (@nesi_nz)</li>
-            <li>SciCo 2017 organizers, sponsors, participants</li>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2-yellowish.jpg">
-          <h3>Demo</h3>
-          <ul>
-            <li><a href="http://newspapers.library.wales/view/4342439/4342445/53/">http://newspapers.library.wales/view/4342439/4342445/53/</a></li>
-            <li><a href="https://libimages1.princeton.edu/osd-demo/?feedme=pudl0123/8172070/01/00000001.jp2">https://libimages1.princeton.edu/osd-demo/?feedme=pudl0123/8172070/01/00000001.jp2</a></li>
-          </ul>
-        </section>
-        <section data-background-image="img/ZsMwlm2.jpg">
-          <h2>Questions ???</h2>
-        </section>
-        <section data-background-image="img/ZsMwlm2.jpg">
-          <h2>Some links</h2>
-          <ul>
-            <li><a href="http://resources.digirati.com/iiif/an-introduction-to-iiif/">http://resources.digirati.com/iiif/an-introduction-to-iiif/</a></li>
-          </ul>
-        </section>
-            </div>
-        </div>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2.jpg">
+        <h3>Acknowledgements</h3>
+        <ul>
+          <li>Ioannis Moutsatsos (@ioannismou)</li>
+          <li>NIWA (@niwa_nz)</li>
+          <li>NeSI (@nesi_nz)</li>
+          <li>SciCo 2017 organizers, sponsors, participants</li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2-yellowish.jpg">
+        <h3>Demo</h3>
+        <ul>
+          <li><a href="http://newspapers.library.wales/view/4342439/4342445/53/">http://newspapers.library.wales/view/4342439/4342445/53/</a></li>
+          <li><a href="https://libimages1.princeton.edu/osd-demo/?feedme=pudl0123/8172070/01/00000001.jp2">https://libimages1.princeton.edu/osd-demo/?feedme=pudl0123/8172070/01/00000001.jp2</a></li>
+        </ul>
+      </section>
+      <section data-background-image="img/ZsMwlm2.jpg">
+        <h2>Questions ???</h2>
+      </section>
+      <section data-background-image="img/ZsMwlm2.jpg">
+        <h2>Some links</h2>
+        <ul>
+          <li><a href="http://resources.digirati.com/iiif/an-introduction-to-iiif/">http://resources.digirati.com/iiif/an-introduction-to-iiif/</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
 
-        <script src="lib/js/head.min.js"></script>
-        <script src="js/reveal.js"></script>
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
 
-        <script>
+  <script>
             // More info about config & dependencies:
             // - https://github.com/hakimel/reveal.js#configuration
             // - https://github.com/hakimel/reveal.js#dependencies
             Reveal.initialize({
-        controls: false,
-        progress: true,
-        history: true,
-        center: true,
-        slideNumber: true,
+              controls: false,
+              progress: true,
+              history: true,
+              center: true,
+              slideNumber: true,
         transition: 'slide', // none/fade/slide/convex/concave/zoom
         keyboard: true,
         touch: true,
         loop: false,
         fragments: true,
-                dependencies: [
-                    { src: 'plugin/markdown/marked.js' },
-                    { src: 'plugin/markdown/markdown.js' },
-                    { src: 'plugin/notes/notes.js', async: true },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-                ]
-            });
-        </script>
-    </body>
-</html>
+        dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+  </html>
