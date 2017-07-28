@@ -125,8 +125,10 @@
         </ul>
       </section>
       </section>
-      <section data-background-image="img/ZsMwlm2-redish.jpg">
-        <h3>Map goes here...</h3>
+      <section data-state="viewing_map_state" data-background-image="img/ZsMwlm2-redish.jpg">
+        <h3>Map of IIIF Participants</h3>
+        <iframe id="users_map" src="https://www.google.com/maps/d/embed?mid=1mKPT7ClU7DINl16drfb1RASOE6Q" width="640" height="480"></iframe>
+        <p><a href="https://goo.gl/X8kD5B">RABUN, Sheila, 2017g. IIIF Participants. Google Map</a></p>
       </section>
       <section data-background-image="img/ZsMwlm2-purpleish.jpg">
         <h3>Standards in the framework</h3>
@@ -353,6 +355,10 @@
         { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
+
+    Reveal.addEventListener( 'viewing_map_state', function() {
+      document.getElementById('users_map').src = 'https://www.google.com/maps/d/embed?mid=1mKPT7ClU7DINl16drfb1RASOE6Q';
+    }, false );
     </script>
   </body>
   </html>
